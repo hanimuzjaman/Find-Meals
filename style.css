@@ -1,0 +1,301 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+  
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+/* Upper Section */
+.upperSection {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+  
+.topLine {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+  
+blockquote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+  
+cite {
+    display: block;
+    margin-top: 0.5rem;
+    color: #888;
+}
+  
+.searchSection {
+    margin: 1rem 0;
+}
+  
+.inputBox {
+    padding: 0.7rem 1rem;
+    width: 250px;
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    margin-right: 0.5rem;
+}
+  
+.inputButton {
+    padding: 0.7rem 1.2rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+.inputButton:hover {
+    background-color: #219150;
+}
+  
+h2.searchResultTitle {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    display: none; 
+}
+  
+/* Lower Section */
+.lowersection {
+    display: flex;
+    justify-content: center;
+}
+  
+.lowersection .recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Recipe Card */
+
+
+.recipeContainer {
+    background: white;
+    padding: 1.2rem;  
+    height: 22rem;
+    border-radius: 15px;  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.3s;  /* shadow transition */
+}
+
+.recipeContainer:hover {
+    transform: translateY(-10px);  
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);  
+}
+
+.imgHover img {
+    width: 100%;
+    height: 200px;  
+    object-fit: cover;
+    border-radius: 10px;  
+}
+
+.mealName {
+    font-size: 1.2rem;  
+    margin: 1rem 0;
+    font-weight: 600;  
+    color: #2c3e50;
+}
+
+.getRecipeBtn {
+    padding: 0.6rem 1.3rem;  
+    background-color: #ff5722;
+    border: none;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 1rem;
+    right: 30%;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;  
+    transition: background 0.3s, transform 0.2s ease;
+}
+
+.getRecipeBtn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);  
+}
+
+/* Not Found Styling */
+.notFound {
+    font-size: 1.5rem;  
+    color: #e74c3c;  
+    padding: 2rem 0 2rem 20rem;
+    width: 100%;
+    margin-top: 2rem;
+    font-weight: bold;  
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;  
+    border-radius: 10px;
+    animation: fadeInMessage 0.5s ease-out;  /* animation */
+}
+
+/* Add an animation to the Not Found message */
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal Overlay */
+.detailRecipe {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(3px);
+}
+
+.detailRecipe.show-item {
+    display: flex;
+}
+
+/* Modal Container */
+.detailRecipeContainer {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 2rem 2rem 2.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: fadeInUp 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Close Button */
+.CloseBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.CloseBtn:hover {
+    color: #222;
+}
+
+/* Meal Name */
+.MealName {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+/* Cuisine Text */
+.instruction h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+/* Meal Image */
+.ImageInstruction {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #f1f1f1;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Instructions */
+.recipeInstruction {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #555;
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+    max-height: 250px;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.recipeInstruction::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recipeInstruction::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Watch Video Button */
+.watchVideo {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(135deg, #00b894, #0984e3);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.watchVideo:hover {
+    background: linear-gradient(135deg, #0984e3, #00b894);
+    transform: scale(1.05);
+}
+
+/* Modal Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
